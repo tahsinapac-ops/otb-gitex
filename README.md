@@ -41,7 +41,20 @@ python -m http.server 8000
 index.html        landing page
 gitex.html        GITEX Global 2026 programme (self-contained, images inlined)
 assets/logo.png   wordmark, used by the landing page
+assets/hero.jpg   optional — see below
 ```
+
+### Swapping the hero illustration for a photo
+
+Drop a landscape booth photo at `assets/hero.jpg` (1600×1200 or wider) and the
+GITEX page uses it instead of the built-in SVG illustration — rounded frame,
+bottom scrim and a "Dubai World Trade Centre" caption pill are already styled.
+No code change needed. If the file is absent the illustration stays, so the
+page never breaks.
+
+Make sure you hold the rights to any photo you add: the site is public, and
+show-floor photography and event branding usually belong to the organiser or
+the exhibitor.
 
 ## Deployment
 

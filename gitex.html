@@ -86,6 +86,19 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(233,103,11,0)}100%{box-shadow:0 0 0 0 rgba(233,103,11,0)}}
 @media(max-width:900px){.herogrid{grid-template-columns:1fr}.hero h1{font-size:38px}.heroart{max-width:520px;margin:0 auto}}
 
+/* hero photo slot — used only when assets/hero.jpg exists */
+.heroshot{position:relative;margin:0;border-radius:20px;overflow:hidden;
+  box-shadow:0 40px 74px -36px rgba(14,22,40,.6)}
+.heroshot[hidden]{display:none}
+.heroshot img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.heroshot::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 55%,rgba(14,22,40,.45));border-radius:20px}
+.heroshot figcaption{position:absolute;left:16px;bottom:16px;z-index:1;display:inline-flex;
+  align-items:center;gap:8px;background:rgba(18,34,78,.8);backdrop-filter:blur(6px);color:#fff;
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 15px;border-radius:999px}
+.heroshot figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange-f)}
+
 /* floaty */
 .float{animation:float 6s ease-in-out infinite}
 .float.b{animation-delay:-3s} .float.c{animation-delay:-1.5s}
@@ -324,7 +337,14 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
     </div>
     <!-- HERO ILLUSTRATION -->
     <div class="heroart rv in">
-      <svg viewBox="0 0 520 440" width="100%" role="img" aria-label="Bangladesh pavilion with shared pods">
+      <!-- Drop a booth photo at assets/hero.jpg and it replaces the illustration below
+           automatically. Landscape, ideally 1600x1200 or wider. If the file is absent
+           the illustration stays. -->
+      <figure class="heroshot" hidden>
+        <img id="heroimg" src="assets/hero.jpg" alt="A national pavilion on the GITEX Global show floor">
+        <figcaption>Dubai World Trade Centre</figcaption>
+      </figure>
+      <svg class="heroill" viewBox="0 0 520 440" width="100%" role="img" aria-label="Bangladesh pavilion with shared pods">
         <defs>
           <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#22346B"/><stop offset="1" stop-color="#12224E"/></linearGradient>
@@ -670,6 +690,16 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
 // scroll reveal
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.16});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+// hero photo: swap in assets/hero.jpg if it is actually there, else keep the illustration
+(function(){
+  var shot=document.querySelector('.heroshot'), img=document.getElementById('heroimg'),
+      ill=document.querySelector('.heroill');
+  if(!shot||!img||!ill)return;
+  img.addEventListener('load',function(){
+    if(img.naturalWidth>1){shot.hidden=false; ill.style.display='none';}
+  });
+})();
 
 // count-up
 function countUp(el){
