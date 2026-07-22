@@ -169,6 +169,37 @@ section.blk{padding:76px 0}
 .card p{font-size:14px;color:var(--mid);margin-top:8px}
 @media(max-width:820px){.cards{grid-template-columns:1fr}}
 
+/* training panel */
+.train{display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:stretch;background:#fff;
+  border:1px solid var(--hair);border-radius:22px;padding:38px 42px;margin-bottom:56px;
+  box-shadow:0 34px 64px -44px rgba(14,22,40,.5)}
+.trainart{background:linear-gradient(160deg,#F3F6FC,#E7EEFA);border-radius:16px;padding:22px;
+  display:flex;align-items:center;justify-content:center}
+.trainart svg{width:100%;height:auto;font-family:var(--sans)}
+.trainbody h3{font-size:27px;font-weight:800;letter-spacing:-.028em;line-height:1.14;
+  margin-top:11px;text-wrap:balance}
+.trainbody>p{font-size:15px;color:var(--mid);margin-top:13px}
+.mods{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.mods li{display:flex;gap:14px;align-items:flex-start}
+.mods .i{flex:none;width:28px;height:28px;border-radius:9px;background:var(--wash);
+  border:1px solid var(--hair);color:var(--navy);font-family:var(--mono);font-size:11.5px;
+  font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.mods b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.01em}
+.mods .d{display:block;font-size:13px;color:var(--mid);margin-top:3px;line-height:1.5}
+.trainnote{margin-top:24px;padding-top:19px;border-top:1px solid var(--hair);
+  font-size:13.5px;color:var(--mid);line-height:1.55}
+.trainnote b{color:var(--ink)}
+@media(max-width:900px){.train{grid-template-columns:1fr;gap:28px;padding:26px}
+  .trainbody h3{font-size:23px}}
+
+/* per-phase deliverables */
+.gets{list-style:none;margin:16px auto 0;display:flex;flex-direction:column;gap:8px;
+  text-align:left;max-width:290px}
+.gets li{display:flex;gap:9px;font-size:13px;color:var(--mid);line-height:1.45}
+.gets i{flex:none;width:16px;height:16px;border-radius:50%;background:#FBE3D0;color:var(--orange);
+  font-style:normal;font-size:9.5px;font-weight:900;display:flex;align-items:center;
+  justify-content:center;margin-top:2px}
+
 /* solution timeline */
 .tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
 .tl::before{content:"";position:absolute;top:44px;left:12%;right:12%;height:3px;
@@ -522,24 +553,126 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
       <h2>One programme, in three parts</h2>
       <p>The work that wins the deal — not just the four days on the floor.</p>
     </div>
+
+    <div class="train rv">
+      <div class="trainart">
+        <svg viewBox="0 0 480 440" role="img"
+             aria-label="An expert coaching a group in front of a screen showing leads turning into signed contracts, above the target list, pitch script and proposal template each company keeps">
+          <rect x="34" y="24" width="292" height="182" rx="13" fill="#12224E"/>
+          <path d="M34 37a13 13 0 0 1 13-13h266a13 13 0 0 1 13 13v19H34z" fill="#1B3070"/>
+          <circle cx="54" cy="40" r="4.5" fill="#F97507"/>
+          <rect x="68" y="36" width="86" height="8" rx="4" fill="#fff" opacity=".28"/>
+          <rect x="58" y="76" width="176" height="15" rx="7.5" fill="#F97507"/>
+          <rect x="58" y="100" width="140" height="15" rx="7.5" fill="#5E79C8"/>
+          <rect x="58" y="124" width="102" height="15" rx="7.5" fill="#4A5C8C"/>
+          <rect x="58" y="148" width="64" height="15" rx="7.5" fill="#3B4A75"/>
+          <text x="58" y="184" font-size="11" font-weight="700" fill="#8D9BC4">leads → meetings → proposals → signed</text>
+          <path d="M250 172l22-26 18 16 30-46" fill="none" stroke="#F97507" stroke-width="3.2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="320" cy="116" r="4.6" fill="#F97507"/>
+          <ellipse cx="180" cy="238" rx="118" ry="11" fill="#0E1628" opacity=".07"/>
+          <rect x="170" y="206" width="20" height="24" fill="#C6D0E6"/>
+          <rect x="142" y="228" width="76" height="8" rx="4" fill="#C6D0E6"/>
+          <circle cx="398" cy="104" r="19" fill="#E9670B"/>
+          <path d="M366 200v-42a32 32 0 0 1 64 0v42z" fill="#E9670B"/>
+          <path d="M374 150l-38-26" stroke="#E9670B" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="333" cy="121" r="6.5" fill="#E9670B"/>
+          <g transform="translate(0,-20)">
+            <g fill="#3F5AA6">
+              <circle cx="86" cy="222" r="17"/><path d="M56 300v-26a30 30 0 0 1 60 0v26z"/>
+              <circle cx="176" cy="234" r="15"/><path d="M150 300v-22a26 26 0 0 1 52 0v22z"/>
+            </g>
+            <g fill="#5E79C8" opacity=".5">
+              <circle cx="266" cy="230" r="15"/><path d="M240 300v-22a26 26 0 0 1 52 0v22z"/>
+            </g>
+          </g>
+
+          <path d="M20 326h440" stroke="#D7DEEE" stroke-width="1.6" stroke-dasharray="5 6"/>
+          <text x="240" y="318" text-anchor="middle" font-size="10.5" font-weight="800"
+                letter-spacing="1.6" fill="#8D9BC4">AND YOU KEEP</text>
+
+          <g stroke="#D7DEEE" stroke-width="1.6" fill="#fff">
+            <rect x="18" y="344" width="138" height="72" rx="10"/>
+            <rect x="171" y="344" width="138" height="72" rx="10"/>
+            <rect x="324" y="344" width="138" height="72" rx="10"/>
+          </g>
+          <g fill="#F97507">
+            <rect x="34" y="360" width="56" height="7" rx="3.5"/>
+            <rect x="187" y="360" width="56" height="7" rx="3.5"/>
+            <rect x="340" y="360" width="56" height="7" rx="3.5"/>
+          </g>
+          <g fill="#C6D0E6">
+            <rect x="34" y="376" width="106" height="6" rx="3"/><rect x="34" y="390" width="82" height="6" rx="3"/>
+            <rect x="187" y="376" width="106" height="6" rx="3"/><rect x="187" y="390" width="82" height="6" rx="3"/>
+            <rect x="340" y="376" width="106" height="6" rx="3"/><rect x="340" y="390" width="82" height="6" rx="3"/>
+          </g>
+          <g text-anchor="middle" font-size="11" font-weight="700" fill="#586178">
+            <text x="87" y="434">Target list</text>
+            <text x="240" y="434">Pitch script</text>
+            <text x="393" y="434">Proposal template</text>
+          </g>
+        </svg>
+      </div>
+      <div class="trainbody">
+        <span class="eyebrow">The part nobody sells you</span>
+        <h3>Expert training on how to actually get clients</h3>
+        <p>A stall does not sell anything. People do. Before you fly, your team is trained by
+          people who have worked that floor and closed from it — on the specific job of turning
+          a hall full of strangers into signed contracts.</p>
+        <ol class="mods">
+          <li><span class="i">01</span><div><b>Book meetings before you fly</b>
+            <span class="d">Build a named target list from the exhibitor and visitor directories, and run the outreach that actually gets replies.</span></div></li>
+          <li><span class="i">02</span><div><b>The 90-second pitch</b>
+            <span class="d">What a Gulf buyer needs to hear to give you a second meeting — and what makes them walk.</span></div></li>
+          <li><span class="i">03</span><div><b>Qualify, don't collect</b>
+            <span class="d">Three questions that separate a real buyer from a badge scan, so you spend day three on the right people.</span></div></li>
+          <li><span class="i">04</span><div><b>Price it for the room</b>
+            <span class="d">Rate cards and proposals that survive being compared with Indian and Pakistani bidders standing metres away.</span></div></li>
+          <li><span class="i">05</span><div><b>The six-week follow-up</b>
+            <span class="d">The cadence that turns a floor conversation into a contract — the part where most exhibitors quietly lose the deal.</span></div></li>
+        </ol>
+        <p class="trainnote">Live sessions, recorded for the rest of your team, plus the
+          <b>scripts, target lists and proposal templates you keep</b> — whether or not you
+          exhibit with us again.</p>
+      </div>
+    </div>
+
     <div class="tl">
       <div class="tstep rv">
         <div class="orb"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 11l1.5 1.5L13 9M8.5 16h6"/></svg></div>
         <span class="ph">Before · 6 months out</span>
         <h3>Pre-event</h3>
         <p>Buyer lists, matchmaking, training and government subsidy — pursued for you.</p>
+        <ul class="gets">
+          <li><i>✓</i>A named buyer list, built for what you actually sell</li>
+          <li><i>✓</i>Meetings booked into your four-day calendar</li>
+          <li><i>✓</i>The five training sessions above, with templates</li>
+          <li><i>✓</i>Your government subsidy application filed for you</li>
+        </ul>
       </div>
       <div class="tstep mid rv">
         <div class="orb"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
         <span class="ph">During · the four days</span>
         <h3>At the event</h3>
         <p>A prime pod in a national pavilion, with meetings already on your calendar.</p>
+        <ul class="gets">
+          <li><i>✓</i>Your own branded pod, built and dressed</li>
+          <li><i>✓</i>A shared meeting floor, demo bar and store</li>
+          <li><i>✓</i>A booked calendar instead of a queue you wait for</li>
+          <li><i>✓</i>Someone on the floor with you, all four days</li>
+        </ul>
       </div>
       <div class="tstep rv">
         <div class="orb"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
         <span class="ph">After · 6+ weeks</span>
         <h3>Post-event</h3>
         <p>A follow-up desk that works your pipeline until the deals actually close.</p>
+        <ul class="gets">
+          <li><i>✓</i>Every lead logged, scored and handed back to you</li>
+          <li><i>✓</i>The six-week follow-up cadence, run with you</li>
+          <li><i>✓</i>Help on the proposals that come out of it</li>
+          <li><i>✓</i>A close-out report you can take to your board</li>
+        </ul>
       </div>
     </div>
   </div>
