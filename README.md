@@ -11,6 +11,15 @@ real projects, real assurance.
 | --- | --- | --- |
 | [`index.html`](index.html) | `/` | Landing page. Intro plus a feature card linking to the current programme. |
 | [`gitex.html`](gitex.html) | `/gitex.html` | The GITEX Global 2026 pitch — the full single-page case for a Bangladesh national pavilion. |
+| [`flyer.html`](flyer.html) | `/flyer.html` | One-page summary — problem, fix, cost comparison, four USPs. Prints to a single A4 sheet. |
+
+### The flyer
+
+`flyer.html` is a leave-behind: bullets and visuals only, no prose. Hit
+**Print / Save PDF** (or Ctrl/Cmd-P) and it lays out as exactly one A4 page —
+verified, page count 1. The print stylesheet is fixed at 210×296 mm and the
+responsive rules are scoped to `@media screen`, so shrinking a browser window
+never affects what comes out of the printer.
 
 ### The GITEX 2026 page
 

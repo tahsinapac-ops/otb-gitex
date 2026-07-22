@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bangladesh Pavilion · GITEX Global 2026 — one-page summary</title>
+<meta name="description" content="One-page summary: join GITEX Global 2026 in a shared Bangladesh pavilion at a fifth of the cost.">
+<link rel="icon" href="assets/logo.png">
+<style>
+:root{
+  --navy:#12224E; --navy2:#1B3070; --navy-l:#3F5AA6; --orange:#E9670B; --orange-f:#F97507;
+  --ink:#0E1628; --mid:#586178; --hair:#E3E7F0; --wash:#F5F7FB; --paper:#fff;
+  --sans:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  --mono:"Cascadia Mono",ui-monospace,Consolas,"SF Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#6C7590;line-height:1.4;
+  -webkit-font-smoothing:antialiased;padding:26px 16px 60px}
+a{color:inherit;text-decoration:none}
+
+/* screen-only toolbar */
+.bar{max-width:210mm;margin:0 auto 18px;display:flex;justify-content:space-between;
+  align-items:center;gap:14px;flex-wrap:wrap}
+.bar span{color:#E7EBF5;font-size:12.5px}
+.bar .btns{display:flex;gap:10px}
+.bar button,.bar a.b{background:var(--orange);color:#fff;border:0;border-radius:999px;
+  font-family:inherit;font-weight:800;font-size:13px;padding:10px 18px;cursor:pointer}
+.bar a.b{background:rgba(255,255,255,.15);color:#fff}
+
+/* the sheet */
+.sheet{width:210mm;min-height:297mm;margin:0 auto;background:var(--paper);
+  padding:13mm 13mm 11mm;display:flex;flex-direction:column;gap:5.4mm;
+  justify-content:space-between;box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:3.4mm;border-bottom:2px solid var(--hair)}
+.top img{height:34px;width:auto}
+.gx{display:inline-flex;align-items:center;gap:7px}
+.gx .wm{display:flex;flex-direction:column;line-height:.84}
+.gx .wm b{font-size:17px;font-weight:800;letter-spacing:-.035em;color:var(--navy)}
+.gx .wm i{font-style:normal;font-size:7px;font-weight:800;letter-spacing:.34em;color:var(--mid)}
+.gx .yr{font-family:var(--mono);font-size:12px;font-weight:800;color:#fff;
+  background:var(--orange);border-radius:5px;padding:3px 6px 4px}
+
+/* hero */
+.hero h1{font-size:31px;font-weight:800;letter-spacing:-.035em;line-height:1.06}
+.hero h1 em{font-style:normal;color:var(--orange);
+  background:linear-gradient(180deg,transparent 62%,#FBD9BE 62%)}
+.hero p{font-size:12.5px;color:var(--mid);margin-top:6px;max-width:64ch}
+.hero p b{color:var(--ink)}
+
+/* generic block */
+.lab{font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);display:block;margin-bottom:6px}
+ul{list-style:none}
+li{position:relative;padding:3.4px 0 3.4px 13px;font-size:11.5px;line-height:1.45;
+  color:var(--mid)}
+li b{color:var(--ink);font-weight:700}
+li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;
+  border-radius:50%;background:var(--orange)}
+
+/* two columns */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.pane{background:var(--wash);border:1px solid var(--hair);border-radius:10px;padding:5mm}
+.pane.dark{background:var(--navy);border-color:var(--navy)}
+.pane.dark .lab{color:var(--orange-f)}
+.pane.dark li{color:#C7D0E6}
+.pane.dark li b{color:#fff}
+.pane.dark li::before{background:var(--orange-f)}
+.pane h2{font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px}
+.pane.dark h2{color:#fff}
+
+/* cost band */
+.cost{border:1px solid var(--hair);border-radius:10px;padding:5mm;display:grid;
+  grid-template-columns:1fr 46mm;gap:6mm;align-items:center}
+.cost h2{font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.crow{margin-bottom:9px}
+.crow .ct{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.crow .cw{font-size:11px;font-weight:700;color:var(--mid)}
+.crow .ca{font-family:var(--mono);font-size:19px;font-weight:800;letter-spacing:-.04em}
+.crow.a .ca{color:var(--navy)} .crow.b .ca{color:var(--orange)}
+.ctrack{height:15px;border-radius:5px;background:var(--wash);overflow:hidden}
+.cfill{height:100%;border-radius:5px}
+.crow.a .cfill{background:#B9C2DA;width:100%}
+.crow.b .cfill{background:linear-gradient(90deg,var(--orange),var(--orange-f));width:56.5%}
+.save{display:inline-block;margin-top:2px;background:#FDF0E6;border:1px solid #F7CFAC;
+  color:var(--orange);font-size:11px;font-weight:800;border-radius:999px;padding:4px 11px}
+
+/* floor scale */
+.floor{display:flex;align-items:flex-end;justify-content:center;gap:5mm}
+.fig{display:flex;flex-direction:column;align-items:center;gap:10px}
+.fig figcaption{font-size:8.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--mid);text-align:center}
+.bx{border-radius:6px;border:1.4px solid var(--hair);background:var(--wash);position:relative}
+.bx.s{width:15mm;height:15mm}
+.bx.l{width:30mm;height:30mm;border-color:#F7CFAC;background:#FDF6F0;
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);
+  gap:1.4mm;padding:1.6mm}
+.pod{border-radius:3px;background:#C6D0E6}
+.pod.you{background:var(--orange-f)}
+.pod.shared{background:transparent;border:1.2px dashed #D8B593;grid-column:3/4}
+.bx .sq{position:absolute;left:50%;transform:translateX(-50%);bottom:-7px;
+  font-family:var(--mono);font-size:8px;font-weight:800;color:var(--mid);
+  background:#fff;padding:0 4px}
+
+/* usp */
+.usp{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4mm}
+.u{border:1px solid var(--hair);border-radius:10px;padding:4mm 3.4mm;text-align:center}
+.u .n{font-family:var(--mono);font-size:22px;font-weight:800;letter-spacing:-.05em;
+  color:var(--orange);line-height:1}
+.u .t{font-size:10.5px;font-weight:800;margin-top:5px;line-height:1.25}
+.u .s{font-size:9.5px;color:var(--mid);margin-top:3px;line-height:1.3}
+
+/* cta */
+.cta{background:linear-gradient(135deg,var(--navy),#22346B);border-radius:10px;
+  padding:5mm 6mm;display:flex;justify-content:space-between;align-items:center;gap:5mm;color:#fff}
+.cta h2{font-size:17px;font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.cta p{font-size:11px;color:#C7D0E6;margin-top:4px}
+.cta .act{text-align:right;flex:none}
+.cta .mail{display:inline-block;background:var(--orange-f);color:#fff;font-weight:800;
+  font-size:12.5px;border-radius:999px;padding:9px 17px}
+.cta .dl{display:block;font-family:var(--mono);font-size:10px;font-weight:800;
+  color:var(--orange-f);margin-top:7px;letter-spacing:.04em}
+.foot{font-size:7.6px;color:#8C95AB;line-height:1.45;text-align:center}
+
+@media print{
+  @page{size:A4;margin:0}
+  html,body{width:210mm;height:296mm;margin:0;padding:0;background:#fff;overflow:hidden}
+  .bar{display:none}
+  .sheet{width:210mm;height:296mm;min-height:0;margin:0;overflow:hidden;
+    box-shadow:none;break-after:avoid;page-break-after:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media screen and (max-width:820px){
+  body{padding:14px 10px 40px}
+  .sheet{width:100%;min-height:0;padding:22px 18px 20px;gap:20px}
+  .duo,.cost,.usp{grid-template-columns:1fr}
+  .cost{gap:20px}
+  .hero h1{font-size:26px}
+  .usp{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span>One-page summary — print or save as PDF at A4.</span>
+  <div class="btns">
+    <a class="b" href="gitex.html">Full page →</a>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+
+  <div class="top">
+    <img src="assets/logo.png" alt="Outsource to Bangladesh">
+    <span class="gx"><span class="wm"><b>GITEX</b><i>GLOBAL</i></span><span class="yr">2026</span></span>
+  </div>
+
+  <div class="hero">
+    <h1>Join GITEX Global 2026<br>at <em>a fifth of the cost.</em></h1>
+    <p>A 36&nbsp;m² stand runs about <b>$54,000</b>. Split it five ways and your share is
+      <b>$10,800</b> — one Bangladesh pavilion, shared, with six months of preparation behind it.</p>
+  </div>
+
+  <div class="duo">
+    <div class="pane">
+      <span class="lab">The problem</span>
+      <h2>You don't have a lead problem</h2>
+      <ul>
+        <li><b>No flag on the floor.</b> Bangladesh had no national pavilion at GITEX Global 2025. India brought 237 companies, Pakistan 26.</li>
+        <li><b>The room is expensive.</b> A prime stall is priced for budgets ten times yours.</li>
+        <li><b>Nobody knows you're coming.</b> Buyers fill their four days weeks ahead.</li>
+        <li><b>Deals close after.</b> The contract is won in the six weeks that follow.</li>
+      </ul>
+    </div>
+    <div class="pane dark">
+      <span class="lab">The fix</span>
+      <h2>One programme, three parts</h2>
+      <ul>
+        <li><b>Before.</b> Buyer lists, meetings booked, subsidy filed — and five training sessions on winning clients.</li>
+        <li><b>During.</b> Your branded pod in a national pavilion, shared meeting floor and demo bar.</li>
+        <li><b>After.</b> Every lead scored, six weeks of follow-up run with you, a close-out report.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cost">
+    <div>
+      <h2>The maths, in the open</h2>
+      <div class="crow a">
+        <div class="ct"><span class="cw">Going alone · 9 m²</span><span class="ca">$19,125</span></div>
+        <div class="ctrack"><div class="cfill"></div></div>
+      </div>
+      <div class="crow b">
+        <div class="ct"><span class="cw">Your share · 36 m² split five ways</span><span class="ca">$10,800</span></div>
+        <div class="ctrack"><div class="cfill"></div></div>
+      </div>
+      <span class="save">≈ 44% less — and 4× the floor</span>
+    </div>
+    <div class="floor">
+      <figure class="fig">
+        <div class="bx s"><span class="sq">9 m²</span></div>
+        <figcaption>Alone</figcaption>
+      </figure>
+      <figure class="fig">
+        <div class="bx l">
+          <div class="pod you"></div><div class="pod"></div><div class="pod"></div>
+          <div class="pod"></div><div class="pod"></div><div class="pod shared"></div>
+          <span class="sq">36 m²</span>
+        </div>
+        <figcaption>Shared</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="usp">
+    <div class="u"><div class="n">4×</div><div class="t">The floor</div><div class="s">36 m² shared, not a 9 m² shell</div></div>
+    <div class="u"><div class="n">5</div><div class="t">Training sessions</div><div class="s">On how to actually win clients</div></div>
+    <div class="u"><div class="n">6</div><div class="t">Months of prep</div><div class="s">Meetings booked before you fly</div></div>
+    <div class="u"><div class="n">$40</div><div class="t">Per $1 spent</div><div class="s">Returned by Pakistan's pavilion</div></div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <h2>Bring a company you trust.<br>You'll both pay less.</h2>
+      <p>Slots are limited by the pavilion footprint we contract in advance.</p>
+    </div>
+    <div class="act">
+      <a class="mail" href="mailto:hello@outsourcetobd.com">hello@outsourcetobd.com</a>
+      <span class="dl">ENROLMENT CLOSES 7 SEP 2026</span>
+    </div>
+  </div>
+
+  <p class="foot">Exhibitor counts: GITEX Global 2025 national pavilions — India, Prasar Bharati News; Pakistan, Press Information Department.
+    $40 per $1: Zeeshan Khattak, acting CEO, PSEB, reported by Business Recorder — revenue against PSEB subsidy spend.
+    Stand costs are indicative estimates, not quoted prices. Full sources at outsourcetobd.com.</p>
+
+</div>
+
+</body>
+</html>
