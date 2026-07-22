@@ -113,6 +113,10 @@ section.blk{padding:76px 0}
 .card .ic{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(150deg,#FDEadd,#FBD9BE);color:var(--orange);margin-bottom:18px}
 .card .ic svg{width:32px;height:32px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.card .vig{border-radius:14px;background:linear-gradient(160deg,#F3F6FC,#EAF0FA);
+  padding:8px 12px;margin-bottom:20px;overflow:hidden}
+.card .vig svg{width:100%;height:auto;font-family:var(--sans)}
+.card:hover .vig{background:linear-gradient(160deg,#F0F4FC,#E4ECF8)}
 .card h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
 .card p{font-size:14px;color:var(--mid);margin-top:8px}
 @media(max-width:820px){.cards{grid-template-columns:1fr}}
@@ -163,6 +167,51 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;heigh
   color:#FFCBA0;border:1px solid rgba(249,117,7,.4);font-weight:800;font-size:14px;border-radius:999px;padding:9px 18px}
 @media(max-width:820px){.calc{padding:30px}.calcgrid{grid-template-columns:1fr;gap:30px}.bigfee{font-size:78px}.vbar .amt{font-size:30px}.stat .n{font-size:48px}}
 
+/* floor-plan illustration */
+.plan{position:relative;z-index:1;margin-top:42px;padding-top:32px;border-top:1px solid rgba(255,255,255,.14)}
+.planhead{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.planhead .lab{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9FAAC6}
+.planhead .keys{display:flex;gap:16px;flex-wrap:wrap}
+.planhead .k{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#B9C2DA}
+.planhead .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+.planhead .sw.you{background:var(--orange-f)}
+.planhead .sw.oth{background:#4A5C8C}
+.planhead .sw.shd{background:transparent;border:1.5px dashed #6B7CAC}
+.planart{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.planfigs{display:flex;align-items:flex-end;justify-content:center;gap:26px;flex-wrap:wrap}
+.plannote p{font-size:14.5px;color:#CBD3E6;line-height:1.6;max-width:44ch}
+.plannote p+p{margin-top:14px}
+.plannote b{color:#fff}
+@media(max-width:980px){.planart{grid-template-columns:1fr;gap:34px}.plannote p{max-width:none}}
+.fp{display:flex;flex-direction:column;align-items:center;gap:14px}
+.fp figcaption{font-size:12.5px;color:#9FAAC6;text-align:center;line-height:1.45}
+.fp figcaption b{display:block;color:#fff;font-size:13.5px}
+.box{position:relative;border-radius:12px;background:rgba(255,255,255,.05);
+  border:1.5px solid rgba(255,255,255,.22)}
+.box .sqm{position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:11.5px;font-weight:800;color:#CBD3E6;
+  background:var(--navy);padding:1px 9px;border-radius:5px;white-space:nowrap}
+.box.solo{width:124px;height:124px;display:flex;align-items:center;justify-content:center}
+.podsolo{width:50px;height:50px;border-radius:8px;background:#3B4A75;
+  display:flex;align-items:center;justify-content:center}
+.podsolo svg{width:13px;height:auto;fill:#8D9BC4}
+.box.big{width:248px;height:248px;padding:11px;display:flex;flex-direction:column;gap:9px;
+  border-color:rgba(249,117,7,.5);background:rgba(249,117,7,.07)}
+.pods{flex:1;display:grid;gap:6px;grid-template-columns:repeat(var(--cols,3),1fr)}
+.pod{border-radius:7px;background:#4A5C8C;display:flex;align-items:center;justify-content:center;
+  transition:background .3s}
+.pod svg{width:10px;height:auto;fill:rgba(255,255,255,.62)}
+.pod.you{background:var(--orange-f);box-shadow:0 0 0 2px rgba(249,117,7,.35)}
+.pod.you svg{fill:#fff}
+.lounge{height:54px;border:1.5px dashed #6B7CAC;border-radius:7px;display:flex;
+  align-items:center;justify-content:center;padding:0 8px}
+.lounge span{font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:#9FAAC6;text-align:center;line-height:1.35}
+.fpvs{display:flex;flex-direction:column;align-items:center;gap:6px;padding-bottom:48px}
+.fpvs svg{width:44px;stroke:var(--orange-f);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fpvs span{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-f)}
+@media(max-width:560px){.fpvs{transform:rotate(90deg);padding:0;margin:6px 0}}
+
 /* proof pictograph */
 .proof{display:flex;flex-direction:column;gap:20px}
 .prow{background:#fff;border:1px solid var(--hair);border-radius:16px;padding:20px 24px}
@@ -182,6 +231,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;heigh
   padding:60px;text-align:center;position:relative;overflow:hidden}
 .final::before{content:"";position:absolute;inset:0;opacity:.35;
   background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px);background-size:22px 22px}
+.refart{position:relative;display:block;width:min(420px,100%);height:auto;margin:0 auto 30px}
 .final h2{font-size:40px;font-weight:800;letter-spacing:-.03em;position:relative;text-wrap:balance}
 .final h2 span{color:var(--orange-f)}
 .final p{font-size:16px;color:#C7D0E6;max-width:560px;margin:16px auto 28px;position:relative}
@@ -314,17 +364,61 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
   </div>
   <div class="cards">
     <div class="card rv">
-      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2a2.4 2.4 0 0 1 2.5-1.7c1.4 0 2.5.9 2.5 2s-1 1.7-2.7 2.2c-1.7.5-2.8 1-2.8 2.2s1.1 2 2.5 2a2.5 2.5 0 0 0 2.6-1.8"/></svg></div>
+      <div class="vig"><svg viewBox="0 0 220 116" role="img" aria-label="A small corner stall with a high price tag">
+        <ellipse cx="92" cy="98" rx="62" ry="7" fill="#0E1628" opacity=".07"/>
+        <rect x="42" y="34" width="100" height="60" rx="6" fill="#E7ECF7"/>
+        <rect x="42" y="26" width="100" height="14" rx="5" fill="#12224E"/>
+        <rect x="56" y="31" width="40" height="4" rx="2" fill="#fff" opacity=".55"/>
+        <rect x="54" y="52" width="30" height="42" rx="4" fill="#CBD5EA"/>
+        <rect x="100" y="52" width="30" height="42" rx="4" fill="#CBD5EA"/>
+        <circle cx="69" cy="66" r="6" fill="#3F5AA6"/>
+        <path d="M60 82a9 9 0 0 1 18 0z" fill="#3F5AA6"/>
+        <g transform="rotate(-14 172 46)">
+          <path d="M148 28h34l22 22-30 30-26-26z" fill="#E9670B"/>
+          <circle cx="160" cy="40" r="5.5" fill="#fff"/>
+          <path d="M166 62l14-14M170 66l14-14" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".9"/>
+        </g>
+      </svg></div>
       <h3>The room is expensive</h3>
       <p>A prime stall is priced for budgets ten times yours. Book late, get a corner nobody walks past.</p>
     </div>
     <div class="card rv">
-      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/></svg></div>
+      <div class="vig"><svg viewBox="0 0 220 116" role="img" aria-label="A buyer's calendar already filled, with no slot for you">
+        <ellipse cx="110" cy="102" rx="66" ry="7" fill="#0E1628" opacity=".07"/>
+        <rect x="46" y="18" width="128" height="80" rx="9" fill="#fff" stroke="#D7DEEE" stroke-width="1.6"/>
+        <path d="M46 27a9 9 0 0 1 9-9h110a9 9 0 0 1 9 9v11H46z" fill="#12224E"/>
+        <rect x="74" y="10" width="6" height="16" rx="3" fill="#3F5AA6"/>
+        <rect x="140" y="10" width="6" height="16" rx="3" fill="#3F5AA6"/>
+        <g fill="#3F5AA6" opacity=".6">
+          <rect x="58" y="48" width="24" height="13" rx="3"/><rect x="88" y="48" width="24" height="13" rx="3"/>
+          <rect x="118" y="48" width="24" height="13" rx="3"/><rect x="148" y="48" width="14" height="13" rx="3"/>
+          <rect x="58" y="66" width="24" height="13" rx="3"/><rect x="118" y="66" width="24" height="13" rx="3"/>
+          <rect x="148" y="66" width="14" height="13" rx="3"/><rect x="58" y="84" width="24" height="8" rx="3"/>
+          <rect x="118" y="84" width="24" height="8" rx="3"/>
+        </g>
+        <rect x="86.5" y="64.5" width="27" height="16" rx="4" fill="#FDF0E6" stroke="#E9670B"
+              stroke-width="1.8" stroke-dasharray="4 3.5"/>
+        <path d="M96 72.5h9" stroke="#E9670B" stroke-width="2.4" stroke-linecap="round"/>
+      </svg></div>
       <h3>Nobody knows you're coming</h3>
       <p>Buyers plan their four days weeks ahead. Not on their calendar means not in their week.</p>
     </div>
     <div class="card rv">
-      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></div>
+      <div class="vig"><svg viewBox="0 0 220 116" role="img" aria-label="Four days on the floor, then six weeks where the deal is actually won">
+        <rect x="26" y="44" width="54" height="20" rx="7" fill="#12224E"/>
+        <g fill="#fff" opacity=".5">
+          <rect x="35" y="52" width="6" height="4" rx="2"/><rect x="45" y="52" width="6" height="4" rx="2"/>
+          <rect x="55" y="52" width="6" height="4" rx="2"/><rect x="65" y="52" width="6" height="4" rx="2"/>
+        </g>
+        <path d="M88 54h100" stroke="#C6D0E6" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9"/>
+        <circle cx="104" cy="54" r="7" fill="#fff" stroke="#C6D0E6" stroke-width="2.4"/>
+        <circle cx="134" cy="54" r="7" fill="#fff" stroke="#C6D0E6" stroke-width="2.4"/>
+        <circle cx="164" cy="54" r="7" fill="#fff" stroke="#C6D0E6" stroke-width="2.4"/>
+        <circle cx="192" cy="54" r="11" fill="#E9670B"/>
+        <path d="M187 54l3.6 3.6L197.5 50" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="53" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#586178">4 days</text>
+        <text x="140" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#586178">6 weeks after</text>
+      </svg></div>
       <h3>Deals close after</h3>
       <p>Leads on the floor go unworked. The contract is won in the six weeks that follow.</p>
     </div>
@@ -388,6 +482,47 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
         <span class="savepill" id="save">≈ 44% less — and 4× the floor</span>
       </div>
     </div>
+
+    <div class="plan">
+      <div class="planhead">
+        <span class="lab">What you actually stand on</span>
+        <span class="keys">
+          <span class="k"><i class="sw you"></i>Your pod</span>
+          <span class="k"><i class="sw oth"></i>Partner pods</span>
+          <span class="k"><i class="sw shd"></i>Shared floor</span>
+        </span>
+      </div>
+      <div class="planart">
+        <div class="plannote">
+          <p>Alone, a <b>9 m² corner shell</b> costs $19,125 — room for a desk, a banner
+            and two chairs. Every meeting happens standing up.</p>
+          <p>Sharing, your branded pod sits inside a <b>36 m² stand</b> with a meeting
+            floor, demo bar and store behind it — and your bill falls with every
+            company that joins.</p>
+        </div>
+        <div class="planfigs">
+        <figure class="fp">
+          <div class="box solo">
+            <div class="podsolo"><svg viewBox="0 0 14 34"><use href="#p"/></svg></div>
+            <span class="sqm">9 m²</span>
+          </div>
+          <figcaption>Going alone<br><b>A corner shell</b></figcaption>
+        </figure>
+        <div class="fpvs" aria-hidden="true">
+          <svg viewBox="0 0 40 24"><path d="M2 12h33M28 5l7 7-7 7"/></svg>
+          <span>4× the floor</span>
+        </div>
+        <figure class="fp">
+          <div class="box big">
+            <div class="pods" id="pods"></div>
+            <div class="lounge"><span>Meeting floor · demo bar · store</span></div>
+            <span class="sqm">36 m²</span>
+          </div>
+          <figcaption>The pavilion<br><b id="planlab">5 companies sharing</b></figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -412,6 +547,41 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
 <!-- FINAL CTA -->
 <section class="blk wrap" id="reserve">
   <div class="final rv">
+    <svg class="refart" viewBox="0 0 460 200" role="img"
+         aria-label="Two companies enrolling together, each paying less">
+      <defs>
+        <linearGradient id="rgc" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".17"/>
+          <stop offset="1" stop-color="#fff" stop-opacity=".05"/>
+        </linearGradient>
+      </defs>
+      <path d="M100 74C140 26 320 26 360 74" fill="none" stroke="#F97507"
+            stroke-width="2.2" stroke-dasharray="7 7" opacity=".85"/>
+      <circle cx="230" cy="38" r="21" fill="#F97507"/>
+      <path d="M221 38h18M230 29v18" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <g>
+        <rect x="34" y="74" width="132" height="96" rx="15" fill="url(#rgc)"
+              stroke="rgba(255,255,255,.34)" stroke-width="1.6"/>
+        <circle cx="100" cy="103" r="10" fill="#fff" opacity=".82"/>
+        <path d="M84 127a16 16 0 0 1 32 0z" fill="#fff" opacity=".82"/>
+        <rect x="66" y="139" width="68" height="6" rx="3" fill="#fff" opacity=".3"/>
+        <rect x="80" y="151" width="40" height="6" rx="3" fill="#fff" opacity=".16"/>
+      </g>
+      <g>
+        <rect x="294" y="74" width="132" height="96" rx="15" fill="url(#rgc)"
+              stroke="rgba(255,255,255,.34)" stroke-width="1.6"/>
+        <circle cx="360" cy="103" r="10" fill="#fff" opacity=".82"/>
+        <path d="M344 127a16 16 0 0 1 32 0z" fill="#fff" opacity=".82"/>
+        <rect x="326" y="139" width="68" height="6" rx="3" fill="#fff" opacity=".3"/>
+        <rect x="340" y="151" width="40" height="6" rx="3" fill="#fff" opacity=".16"/>
+      </g>
+      <g fill="none" stroke="#F97507" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="100" cy="184" r="13" fill="rgba(249,117,7,.18)" stroke-width="1.6"/>
+        <path d="M100 178v11M95.5 184.5l4.5 4.5 4.5-4.5"/>
+        <circle cx="360" cy="184" r="13" fill="rgba(249,117,7,.18)" stroke-width="1.6"/>
+        <path d="M360 178v11M355.5 184.5l4.5 4.5 4.5-4.5"/>
+      </g>
+    </svg>
     <h2>Bring a company you trust.<br><span>You'll both pay less.</span></h2>
     <p>Slots are limited by the pavilion footprint we contract in advance — and enrolment closes three
       months before the doors open.</p>
@@ -453,8 +623,16 @@ document.querySelectorAll('.figs').forEach(function(f){
 var sl=document.getElementById('sl'), fee=document.getElementById('fee'), cnt=document.getElementById('cnt'),
     feesub=document.getElementById('feesub'), baramt=document.getElementById('baramt'),
     youfill=document.getElementById('youfill'), save=document.getElementById('save'),
+    pods=document.getElementById('pods'), planlab=document.getElementById('planlab'),
     TOTAL=54000, ALONE=19125;
 function money(v){return '$'+Math.round(v).toLocaleString('en-US');}
+function drawPods(n){
+  pods.style.setProperty('--cols',n<=4?2:Math.ceil(n/2));
+  var h='';
+  for(var i=0;i<n;i++)h+='<div class="pod'+(i===0?' you':'')+'"><svg viewBox="0 0 14 34"><use href="#p"/></svg></div>';
+  pods.innerHTML=h;
+  planlab.textContent=n+' companies sharing';
+}
 function upd(){
   var n=parseInt(sl.value,10), each=TOTAL/n, pct=Math.round((each/ALONE)*100), saved=Math.round((1-each/ALONE)*100);
   sl.style.setProperty('--pct',((n-2)/6*100)+'%');
@@ -462,6 +640,7 @@ function upd(){
   feesub.innerHTML='<b>'+n+' companies</b> splitting a 36&nbsp;m² stall (~$54,000 est.)';
   youfill.style.width=Math.max(pct,12)+'%';
   save.textContent='≈ '+saved+'% less — and 4× the floor';
+  drawPods(n);
 }
 sl.addEventListener('input',upd); upd();
 </script>
