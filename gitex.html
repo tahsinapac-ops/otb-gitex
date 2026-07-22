@@ -72,8 +72,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
   background-image:radial-gradient(var(--hair) 1.1px,transparent 1.1px);background-size:26px 26px;
   -webkit-mask:linear-gradient(#000,transparent 78%)}
-.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
-.hero h1{font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+.herogrid{display:grid;grid-template-columns:1.14fr .86fr;gap:40px;align-items:center}
+.hero h1{font-size:48px;font-weight:800;letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--orange);
   background:linear-gradient(180deg,transparent 62%,#FBD9BE 62%)}
 .hero .lead{font-size:18px;color:var(--mid);margin:20px 0 28px;max-width:520px}
@@ -84,7 +84,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);
   box-shadow:0 0 0 0 rgba(233,103,11,.5);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(233,103,11,0)}100%{box-shadow:0 0 0 0 rgba(233,103,11,0)}}
-@media(max-width:900px){.herogrid{grid-template-columns:1fr}.hero h1{font-size:42px}.heroart{max-width:520px;margin:0 auto}}
+@media(max-width:900px){.herogrid{grid-template-columns:1fr}.hero h1{font-size:38px}.heroart{max-width:520px;margin:0 auto}}
 
 /* floaty */
 .float{animation:float 6s ease-in-out infinite}
@@ -93,11 +93,46 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 
 /* stat band */
 .band{background:var(--navy);color:#fff;margin-top:20px}
-.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 32px}
-.stat .n{font-family:var(--mono);font-size:60px;font-weight:800;letter-spacing:-.045em;line-height:.95}
-.stat.zero .n{color:#FF8A8A} .stat .n{color:#fff} .stat.o .n{color:var(--orange-f)}
-.stat p{font-size:12.5px;color:#B9C2DA;margin-top:8px;line-height:1.4}
-@media(max-width:760px){.band .wrap{grid-template-columns:repeat(2,1fr)}}
+.bandwrap{display:grid;grid-template-columns:1fr 288px;gap:48px;padding:40px 32px 28px;align-items:center}
+.bhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.bhead .lab{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.bhead .note{font-size:11.5px;color:#8D9BC4}
+.brow{display:grid;grid-template-columns:186px 1fr 92px;align-items:center;gap:18px;padding:9px 0}
+.bwho{display:flex;flex-direction:column;line-height:1.25}
+.bwho .c{font-size:14.5px;font-weight:800}
+.bwho .q{font-size:11px;color:#8D9BC4}
+.btrack{height:26px;border-radius:7px;background:rgba(255,255,255,.07);overflow:hidden}
+.bfill{height:100%;width:0;border-radius:7px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.rv.in .bfill{width:var(--w)}
+.brow.c-pk .bfill{background:linear-gradient(90deg,#3F5AA6,#5E79C8)}
+.brow.c-in .bfill{background:linear-gradient(90deg,#4A5C8C,#8D9BC4)}
+.btrack.empty{background:transparent;border:1.5px dashed rgba(255,138,138,.5);
+  display:flex;align-items:center;padding:0 12px}
+.btrack.empty .nil{font-size:11.5px;font-weight:700;color:#FF8A8A}
+.brow .n{font-family:var(--mono);font-size:30px;font-weight:800;letter-spacing:-.04em;text-align:right}
+.brow.c-bd .n{color:#FF8A8A} .brow.c-pk .n{color:#fff} .brow.c-in .n{color:#B9C2DA}
+.bmoney{border-left:1px solid rgba(255,255,255,.14);padding-left:40px}
+.bmoney .lab{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8D9BC4}
+.bmoney .n{font-family:var(--mono);font-size:56px;font-weight:800;letter-spacing:-.05em;
+  line-height:1;color:var(--orange-f);margin-top:10px}
+.bmoney p{font-size:13px;color:#B9C2DA;margin-top:10px;line-height:1.45}
+.bmoney .src{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:11.5px;
+  font-weight:700;color:#8D9BC4}
+.bmoney .src svg{width:14px;height:14px;stroke:currentColor;stroke-width:1.9;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;flex:none}
+.bfoot{display:flex;gap:28px;flex-wrap:wrap;padding:0 32px 30px;
+  font-size:11.5px;color:#7A88B2;line-height:1.5}
+.bfoot b{color:#9FAAC6;font-weight:700}
+@media(max-width:940px){
+  .bandwrap{grid-template-columns:1fr;gap:32px}
+  .bmoney{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding-left:0;padding-top:26px}
+}
+@media(max-width:620px){
+  .brow{grid-template-columns:1fr 72px;gap:10px 14px}
+  .brow .btrack{grid-column:1/2}
+  .bwho{grid-column:1/-1}
+  .btrack.empty .nil{font-size:10.5px}
+}
 
 /* sections */
 section.blk{padding:76px 0}
@@ -217,14 +252,14 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;heigh
 .prow{background:#fff;border:1px solid var(--hair);border-radius:16px;padding:20px 24px}
 .prow .ph{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .prow .who{font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.prow.in .who{color:var(--mid)} .prow.pk .who{color:var(--navy)} .prow.bd .who{color:var(--orange)}
+.prow.c-in .who{color:var(--mid)} .prow.c-pk .who{color:var(--navy)} .prow.c-bd .who{color:var(--orange)}
 .prow .cnt{font-family:var(--mono);font-size:15px;font-weight:800;color:var(--mid)}
 .prow .who em{font-style:normal;font-family:var(--mono);font-size:10.5px;font-weight:800;
   letter-spacing:0;color:var(--mid);background:var(--wash);border:1px solid var(--hair);
   border-radius:5px;padding:2px 6px;margin-left:7px;vertical-align:1px}
 .figs{display:flex;flex-wrap:wrap;gap:4px}
 .figs svg{width:13px;height:auto;fill:currentColor}
-.prow.in .figs{color:#B9C2DA} .prow.pk .figs{color:var(--navy-l)} .prow.bd .figs{color:var(--orange-f)}
+.prow.c-in .figs{color:#B9C2DA} .prow.c-pk .figs{color:var(--navy-l)} .prow.c-bd .figs{color:var(--orange-f)}
 
 /* final cta */
 .final{background:linear-gradient(135deg,var(--navy),#22346B);color:#fff;border-radius:26px;
@@ -272,9 +307,10 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
   <div class="wrap herogrid">
     <div class="rv in">
       <span class="eyebrow">The ready-to-win event package</span>
-      <h1>One pavilion.<br>Multiple companies.<br><em>A fraction of the cost.</em></h1>
-      <p class="lead">Share the floor, the build and six months of prep — and walk in with buyers
-        already booked. <b>The more of us who go, the less each of us pays.</b></p>
+      <h1>Join GITEX Global 2026<br>at <em>a fifth of the cost</em><br>— and properly prepared.</h1>
+      <p class="lead">A 36&nbsp;m² stand runs about <b>$54,000</b>. Split it five ways and your
+        share is <b>$10,800</b> — one pavilion, one flag, six months of prep behind you, and
+        buyers already booked when you walk in.</p>
       <div class="cta-row">
         <a href="#reserve" class="btn">Join the pavilion →</a>
         <span class="chip"><span class="dot"></span>Enrolment closes 7 Sep 2026</span>
@@ -347,11 +383,44 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
 
 <!-- STAT BAND -->
 <div class="band">
-  <div class="wrap">
-    <div class="stat zero rv"><div class="n" data-count="0">0</div><p>Bangladeshi exhibitors at GITEX Global 2024. Not one.</p></div>
-    <div class="stat rv"><div class="n" data-count="80" data-suffix="+">0</div><p>Pakistani firms in one national pavilion, 2024.</p></div>
-    <div class="stat o rv"><div class="n" data-count="10.5" data-prefix="$" data-suffix="M">0</div><p>Business leads from it, reported by PSEB.</p></div>
-    <div class="stat rv"><div class="n" data-count="199">0</div><p>Indian exhibitors under the India Pavilion.</p></div>
+  <div class="wrap bandwrap">
+    <div class="bexh">
+      <div class="bhead">
+        <span class="lab">Who showed up · GITEX Global 2024</span>
+        <span class="note">All three bars to one scale</span>
+      </div>
+
+      <div class="brow c-bd rv">
+        <div class="bwho"><span class="c">Bangladesh</span><span class="q">exhibitors</span></div>
+        <div class="btrack empty"><span class="nil">Not one company on the floor</span></div>
+        <span class="n" data-count="0">0</span>
+      </div>
+
+      <div class="brow c-pk rv">
+        <div class="bwho"><span class="c">Pakistan</span><span class="q">firms in the national pavilion</span></div>
+        <div class="btrack"><div class="bfill" style="--w:40.2%"></div></div>
+        <span class="n" data-count="80" data-suffix="+">0</span>
+      </div>
+
+      <div class="brow c-in rv">
+        <div class="bwho"><span class="c">India</span><span class="q">exhibitors in the India Pavilion</span></div>
+        <div class="btrack"><div class="bfill" style="--w:100%"></div></div>
+        <span class="n" data-count="199">0</span>
+      </div>
+    </div>
+
+    <div class="bmoney rv">
+      <span class="lab">What that pavilion returned</span>
+      <div class="n" data-count="10.5" data-prefix="$" data-suffix="M">0</div>
+      <p>in business leads, from the Pakistani pavilion above.</p>
+      <span class="src"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>Reported by PSEB</span>
+    </div>
+  </div>
+
+  <!-- Replace the two source strings below with the exact citation or URL each figure came from. -->
+  <div class="wrap bfoot">
+    <span><b>Exhibitor counts:</b> GITEX Global 2024 exhibitor listings.</span>
+    <span><b>Leads figure:</b> Pakistan Software Export Board (PSEB).</span>
   </div>
 </div>
 
@@ -535,9 +604,9 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
       <span class="yrtag"><span class="pip"></span>Figures from GITEX Global 2024</span>
     </div>
     <div class="proof">
-      <div class="prow in rv"><div class="ph"><span class="who">India <em>2024</em></span><span class="cnt">199 exhibitors</span></div><div class="figs" data-n="199"></div></div>
-      <div class="prow pk rv"><div class="ph"><span class="who">Pakistan <em>2024</em></span><span class="cnt">30 exhibitors</span></div><div class="figs" data-n="30"></div></div>
-      <div class="prow bd rv"><div class="ph"><span class="who">Bangladesh <em>2024</em></span><span class="cnt">3 exhibitors</span></div><div class="figs" data-n="3"></div></div>
+      <div class="prow c-in rv"><div class="ph"><span class="who">India <em>2024</em></span><span class="cnt">199 exhibitors</span></div><div class="figs" data-n="199"></div></div>
+      <div class="prow c-pk rv"><div class="ph"><span class="who">Pakistan <em>2024</em></span><span class="cnt">30 exhibitors</span></div><div class="figs" data-n="30"></div></div>
+      <div class="prow c-bd rv"><div class="ph"><span class="who">Bangladesh <em>2024</em></span><span class="cnt">3 exhibitors</span></div><div class="figs" data-n="3"></div></div>
     </div>
     <p class="srcnote rv">Exhibitor counts published for GITEX Global 2024, Dubai World Trade Centre.
       Each figure represents 3 exhibitors.</p>
