@@ -44,17 +44,22 @@ assets/logo.png   wordmark, used by the landing page
 assets/hero.jpg   optional — see below
 ```
 
-### Swapping the hero illustration for a photo
+### The hero photo
 
-Drop a landscape booth photo at `assets/hero.jpg` (1600×1200 or wider) and the
-GITEX page uses it instead of the built-in SVG illustration — rounded frame,
-bottom scrim and a "Dubai World Trade Centre" caption pill are already styled.
-No code change needed. If the file is absent the illustration stays, so the
-page never breaks.
+`assets/hero.jpg` is the GITEX Global show floor at the Dubai World Trade
+Centre, 2022 — photo by **Moneymystica**, licensed
+**[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**, via
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gitex-global.jpg).
+The credit line under the image on the page satisfies the licence; **do not
+remove it** while this photo is in use.
 
-Make sure you hold the rights to any photo you add: the site is public, and
-show-floor photography and event branding usually belong to the organiser or
-the exhibitor.
+To swap in your own photo, replace `assets/hero.jpg` (landscape, 1600×1200 or
+wider) and update or delete that credit line to match. If the file is missing
+the page falls back to the built-in SVG illustration, so it never breaks.
+
+Two caveats with the current photo: it is 1024×768, which is soft on large
+screens, and it shows identifiable people. A CC licence covers copyright, not
+personality rights — your own photography avoids both problems.
 
 ## Deployment
 

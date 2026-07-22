@@ -87,17 +87,21 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 @media(max-width:900px){.herogrid{grid-template-columns:1fr}.hero h1{font-size:38px}.heroart{max-width:520px;margin:0 auto}}
 
 /* hero photo slot — used only when assets/hero.jpg exists */
-.heroshot{position:relative;margin:0;border-radius:20px;overflow:hidden;
-  box-shadow:0 40px 74px -36px rgba(14,22,40,.6)}
+.heroshot{margin:0}
 .heroshot[hidden]{display:none}
-.heroshot img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.heroshot::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 55%,rgba(14,22,40,.45));border-radius:20px}
-.heroshot figcaption{position:absolute;left:16px;bottom:16px;z-index:1;display:inline-flex;
-  align-items:center;gap:8px;background:rgba(18,34,78,.8);backdrop-filter:blur(6px);color:#fff;
+.shotframe{position:relative;border-radius:20px;overflow:hidden;
+  box-shadow:0 40px 74px -36px rgba(14,22,40,.6)}
+.shotframe img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  object-position:50% 34%}
+.shotframe::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 52%,rgba(14,22,40,.5))}
+.shotframe .cap{position:absolute;left:16px;bottom:16px;z-index:1;display:inline-flex;
+  align-items:center;gap:8px;background:rgba(18,34,78,.82);backdrop-filter:blur(6px);color:#fff;
   font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
   padding:8px 15px;border-radius:999px}
-.heroshot figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange-f)}
+.shotframe .cap::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange-f)}
+.heroshot figcaption{margin-top:11px;font-size:11px;color:var(--mid);line-height:1.5}
+.heroshot figcaption a{color:var(--navy-l);text-decoration:underline;text-underline-offset:2px}
 
 /* floaty */
 .float{animation:float 6s ease-in-out infinite}
@@ -126,6 +130,9 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
 .brow.c-bd .n{color:#FF8A8A} .brow.c-pk .n{color:#fff} .brow.c-in .n{color:#B9C2DA}
 .bmoney{border-left:1px solid rgba(255,255,255,.14);padding-left:40px}
 .bmoney .lab{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8D9BC4}
+.bmoney .lab em{font-style:normal;font-family:var(--mono);letter-spacing:0;color:#B9C2DA;
+  background:rgba(255,255,255,.09);border-radius:5px;padding:2px 6px;margin-left:5px}
+.bfoot a{color:#9FAAC6;text-decoration:underline;text-underline-offset:2px}
 .bmoney .n{font-family:var(--mono);font-size:56px;font-weight:800;letter-spacing:-.05em;
   line-height:1;color:var(--orange-f);margin-top:10px}
 .bmoney p{font-size:13px;color:#B9C2DA;margin-top:10px;line-height:1.45}
@@ -179,13 +186,13 @@ section.blk{padding:76px 0}
 .trainbody h3{font-size:27px;font-weight:800;letter-spacing:-.028em;line-height:1.14;
   margin-top:11px;text-wrap:balance}
 .trainbody>p{font-size:15px;color:var(--mid);margin-top:13px}
-.mods{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px}
-.mods li{display:flex;gap:14px;align-items:flex-start}
+.mods{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:2px}
+.mods li{display:flex;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--hair)}
+.mods li:last-child{border-bottom:0}
 .mods .i{flex:none;width:28px;height:28px;border-radius:9px;background:var(--wash);
   border:1px solid var(--hair);color:var(--navy);font-family:var(--mono);font-size:11.5px;
-  font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.mods b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.01em}
-.mods .d{display:block;font-size:13px;color:var(--mid);margin-top:3px;line-height:1.5}
+  font-weight:800;display:flex;align-items:center;justify-content:center}
+.mods b{font-size:15px;font-weight:800;letter-spacing:-.012em}
 .trainnote{margin-top:24px;padding-top:19px;border-top:1px solid var(--hair);
   font-size:13.5px;color:var(--mid);line-height:1.55}
 .trainnote b{color:var(--ink)}
@@ -302,6 +309,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;heigh
   letter-spacing:0;color:var(--mid);background:var(--wash);border:1px solid var(--hair);
   border-radius:5px;padding:2px 6px;margin-left:7px;vertical-align:1px}
 .figs{display:flex;flex-wrap:wrap;gap:4px}
+.figs.empty{border:1.5px dashed #F2C4A2;border-radius:9px;padding:9px 14px}
+.nofig{font-size:12.5px;font-weight:700;color:var(--orange)}
 .figs svg{width:13px;height:auto;fill:currentColor}
 .prow.c-in .figs{color:#B9C2DA} .prow.c-pk .figs{color:var(--navy-l)} .prow.c-bd .figs{color:var(--orange-f)}
 
@@ -372,8 +381,15 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
            automatically. Landscape, ideally 1600x1200 or wider. If the file is absent
            the illustration stays. -->
       <figure class="heroshot" hidden>
-        <img id="heroimg" src="assets/hero.jpg" alt="A national pavilion on the GITEX Global show floor">
-        <figcaption>Dubai World Trade Centre</figcaption>
+        <div class="shotframe">
+          <img id="heroimg" src="assets/hero.jpg"
+               alt="Visitors on the show floor at GITEX Global, Dubai World Trade Centre">
+          <span class="cap">GITEX Global · Dubai World Trade Centre</span>
+        </div>
+        <figcaption>Photo by Moneymystica,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener" target="_blank">CC&nbsp;BY-SA&nbsp;4.0</a>,
+          via <a href="https://commons.wikimedia.org/wiki/File:Gitex-global.jpg" rel="noopener" target="_blank">Wikimedia&nbsp;Commons</a>.
+          GITEX Global 2022.</figcaption>
       </figure>
       <svg class="heroill" viewBox="0 0 520 440" width="100%" role="img" aria-label="Bangladesh pavilion with shared pods">
         <defs>
@@ -437,41 +453,44 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
   <div class="wrap bandwrap">
     <div class="bexh">
       <div class="bhead">
-        <span class="lab">Who showed up · GITEX Global 2024</span>
-        <span class="note">All three bars to one scale</span>
+        <span class="lab">Who came as a country · GITEX Global 2025</span>
+        <span class="note">Companies in each national pavilion, one scale</span>
       </div>
 
       <div class="brow c-bd rv">
-        <div class="bwho"><span class="c">Bangladesh</span><span class="q">exhibitors</span></div>
-        <div class="btrack empty"><span class="nil">Not one company on the floor</span></div>
-        <span class="n" data-count="0">0</span>
+        <div class="bwho"><span class="c">Bangladesh</span><span class="q">no national pavilion</span></div>
+        <div class="btrack empty"><span class="nil">No flag on the floor</span></div>
+        <span class="n">—</span>
       </div>
 
       <div class="brow c-pk rv">
-        <div class="bwho"><span class="c">Pakistan</span><span class="q">firms in the national pavilion</span></div>
-        <div class="btrack"><div class="bfill" style="--w:40.2%"></div></div>
-        <span class="n" data-count="80" data-suffix="+">0</span>
+        <div class="bwho"><span class="c">Pakistan</span><span class="q">in a 156 m² pavilion, Concourse 1</span></div>
+        <div class="btrack"><div class="bfill" style="--w:11%"></div></div>
+        <span class="n" data-count="26">0</span>
       </div>
 
       <div class="brow c-in rv">
-        <div class="bwho"><span class="c">India</span><span class="q">exhibitors in the India Pavilion</span></div>
+        <div class="bwho"><span class="c">India</span><span class="q">in the India Pavilion</span></div>
         <div class="btrack"><div class="bfill" style="--w:100%"></div></div>
-        <span class="n" data-count="199">0</span>
+        <span class="n" data-count="237">0</span>
       </div>
     </div>
 
     <div class="bmoney rv">
-      <span class="lab">What that pavilion returned</span>
+      <span class="lab">What a pavilion returns <em>2024</em></span>
       <div class="n" data-count="10.5" data-prefix="$" data-suffix="M">0</div>
-      <p>in business leads, from the Pakistani pavilion above.</p>
+      <p>in business leads from Pakistan's pavilion — the year it was named
+        GITEX TechDestination of the Year.</p>
       <span class="src"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>Reported by PSEB</span>
     </div>
   </div>
 
-  <!-- Replace the two source strings below with the exact citation or URL each figure came from. -->
   <div class="wrap bfoot">
-    <span><b>Exhibitor counts:</b> GITEX Global 2024 exhibitor listings.</span>
-    <span><b>Leads figure:</b> Pakistan Software Export Board (PSEB).</span>
+    <span><b>India:</b> 237 companies in the India Pavilion, GITEX Global 2025
+      (<a href="https://www.newsonair.gov.in/india-highlights-tech-strength-at-gitex-dubai-2025-with-237-companies" rel="noopener" target="_blank">Prasar Bharati News</a>).</span>
+    <span><b>Pakistan:</b> 26 IT/ITeS companies in a 156 m² pavilion
+      (<a href="https://pid.gov.pk/site/press_detail/30643" rel="noopener" target="_blank">Press Information Dept.</a>).</span>
+    <span><b>Leads:</b> $10.5M at GITEX 2024, Pakistan Software Export Board.</span>
   </div>
 </div>
 
@@ -616,24 +635,17 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
       <div class="trainbody">
         <span class="eyebrow">The part nobody sells you</span>
         <h3>Expert training on how to actually get clients</h3>
-        <p>A stall does not sell anything. People do. Before you fly, your team is trained by
-          people who have worked that floor and closed from it — on the specific job of turning
-          a hall full of strangers into signed contracts.</p>
+        <p>A stall does not sell anything. People do. Five sessions before you fly,
+          run by people who have closed from that floor.</p>
         <ol class="mods">
-          <li><span class="i">01</span><div><b>Book meetings before you fly</b>
-            <span class="d">Build a named target list from the exhibitor and visitor directories, and run the outreach that actually gets replies.</span></div></li>
-          <li><span class="i">02</span><div><b>The 90-second pitch</b>
-            <span class="d">What a Gulf buyer needs to hear to give you a second meeting — and what makes them walk.</span></div></li>
-          <li><span class="i">03</span><div><b>Qualify, don't collect</b>
-            <span class="d">Three questions that separate a real buyer from a badge scan, so you spend day three on the right people.</span></div></li>
-          <li><span class="i">04</span><div><b>Price it for the room</b>
-            <span class="d">Rate cards and proposals that survive being compared with Indian and Pakistani bidders standing metres away.</span></div></li>
-          <li><span class="i">05</span><div><b>The six-week follow-up</b>
-            <span class="d">The cadence that turns a floor conversation into a contract — the part where most exhibitors quietly lose the deal.</span></div></li>
+          <li><span class="i">01</span><b>Book meetings before you fly</b></li>
+          <li><span class="i">02</span><b>The 90-second pitch</b></li>
+          <li><span class="i">03</span><b>Qualify a buyer, don't collect badges</b></li>
+          <li><span class="i">04</span><b>Price against the stand next door</b></li>
+          <li><span class="i">05</span><b>The six-week follow-up that closes</b></li>
         </ol>
-        <p class="trainnote">Live sessions, recorded for the rest of your team, plus the
-          <b>scripts, target lists and proposal templates you keep</b> — whether or not you
-          exhibit with us again.</p>
+        <p class="trainnote">Recorded for your team. <b>Scripts, target lists and proposal
+          templates are yours to keep.</b></p>
       </div>
     </div>
 
@@ -644,10 +656,10 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
         <h3>Pre-event</h3>
         <p>Buyer lists, matchmaking, training and government subsidy — pursued for you.</p>
         <ul class="gets">
-          <li><i>✓</i>A named buyer list, built for what you actually sell</li>
-          <li><i>✓</i>Meetings booked into your four-day calendar</li>
-          <li><i>✓</i>The five training sessions above, with templates</li>
-          <li><i>✓</i>Your government subsidy application filed for you</li>
+          <li><i>✓</i>A named buyer list</li>
+          <li><i>✓</i>Meetings booked before you land</li>
+          <li><i>✓</i>The five training sessions</li>
+          <li><i>✓</i>Subsidy paperwork filed for you</li>
         </ul>
       </div>
       <div class="tstep mid rv">
@@ -656,10 +668,10 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
         <h3>At the event</h3>
         <p>A prime pod in a national pavilion, with meetings already on your calendar.</p>
         <ul class="gets">
-          <li><i>✓</i>Your own branded pod, built and dressed</li>
-          <li><i>✓</i>A shared meeting floor, demo bar and store</li>
-          <li><i>✓</i>A booked calendar instead of a queue you wait for</li>
-          <li><i>✓</i>Someone on the floor with you, all four days</li>
+          <li><i>✓</i>Your own branded pod</li>
+          <li><i>✓</i>Shared meeting floor and demo bar</li>
+          <li><i>✓</i>A booked calendar, not a queue</li>
+          <li><i>✓</i>Support on the floor, all four days</li>
         </ul>
       </div>
       <div class="tstep rv">
@@ -668,10 +680,10 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
         <h3>Post-event</h3>
         <p>A follow-up desk that works your pipeline until the deals actually close.</p>
         <ul class="gets">
-          <li><i>✓</i>Every lead logged, scored and handed back to you</li>
-          <li><i>✓</i>The six-week follow-up cadence, run with you</li>
-          <li><i>✓</i>Help on the proposals that come out of it</li>
-          <li><i>✓</i>A close-out report you can take to your board</li>
+          <li><i>✓</i>Every lead logged and scored</li>
+          <li><i>✓</i>Six weeks of follow-up, run with you</li>
+          <li><i>✓</i>Help on the proposals</li>
+          <li><i>✓</i>A close-out report for your board</li>
         </ul>
       </div>
     </div>
@@ -754,15 +766,15 @@ footer{padding:40px 0 60px;border-top:1px solid var(--hair);margin-top:70px}
     <div class="head rv">
       <span class="eyebrow">Proof the model works</span>
       <h2>Pakistan went as a country.<br>We went as individuals.</h2>
-      <span class="yrtag"><span class="pip"></span>Figures from GITEX Global 2024</span>
+      <span class="yrtag"><span class="pip"></span>National pavilions at GITEX Global 2025</span>
     </div>
     <div class="proof">
-      <div class="prow c-in rv"><div class="ph"><span class="who">India <em>2024</em></span><span class="cnt">199 exhibitors</span></div><div class="figs" data-n="199"></div></div>
-      <div class="prow c-pk rv"><div class="ph"><span class="who">Pakistan <em>2024</em></span><span class="cnt">30 exhibitors</span></div><div class="figs" data-n="30"></div></div>
-      <div class="prow c-bd rv"><div class="ph"><span class="who">Bangladesh <em>2024</em></span><span class="cnt">3 exhibitors</span></div><div class="figs" data-n="3"></div></div>
+      <div class="prow c-in rv"><div class="ph"><span class="who">India <em>2025</em></span><span class="cnt">237 companies</span></div><div class="figs" data-n="237"></div></div>
+      <div class="prow c-pk rv"><div class="ph"><span class="who">Pakistan <em>2025</em></span><span class="cnt">26 companies</span></div><div class="figs" data-n="26"></div></div>
+      <div class="prow c-bd rv"><div class="ph"><span class="who">Bangladesh <em>2025</em></span><span class="cnt">no pavilion</span></div><div class="figs empty" data-n="0"><span class="nofig">Nothing to draw.</span></div></div>
     </div>
-    <p class="srcnote rv">Exhibitor counts published for GITEX Global 2024, Dubai World Trade Centre.
-      Each figure represents 3 exhibitors.</p>
+    <p class="srcnote rv">Companies exhibiting under each national pavilion at GITEX Global 2025,
+      Dubai World Trade Centre. Each figure represents 3 companies.</p>
   </div>
 </section>
 
@@ -847,6 +859,7 @@ document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)})
 // pictograph
 document.querySelectorAll('.figs').forEach(function(f){
   var n=Math.round(parseInt(f.dataset.n,10)/3), h='';
+  if(n<1)return;                       // keep the "nothing to draw" label
   for(var i=0;i<n;i++)h+='<svg viewBox="0 0 14 34"><use href="#p"/></svg>';
   f.innerHTML=h;
 });
