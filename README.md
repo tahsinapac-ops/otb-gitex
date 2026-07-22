@@ -14,12 +14,14 @@ real projects, real assurance.
 
 ### The GITEX 2026 page
 
-- **The gap** — Bangladesh had zero exhibitors at GITEX Global 2024, against 199
-  Indian exhibitors and an 80+ firm Pakistani national pavilion that PSEB
-  reported generated $10.5M in business leads.
+- **The gap** — at GITEX Global 2025 India brought 237 companies to its pavilion
+  and Pakistan 26 to a 156 m² one; Bangladesh had no national pavilion at all.
+  PSEB reports roughly $40 of revenue for every dollar it spends subsidising
+  its exhibitors. Every figure on the page is source-linked.
 - **The argument** — why this is a positioning problem, not a lead-generation
   problem.
-- **The programme** — the offer, broken into three parts.
+- **The programme** — the offer in three parts, led by five training sessions
+  on how to actually win clients on the floor.
 - **Cost calculator** — an interactive slider showing how the shared-pavilion
   price falls as more companies join.
 - **Reserve** — the referral offer: bring a company you trust, you both pay less.
